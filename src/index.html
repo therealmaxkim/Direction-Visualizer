@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Starter React</title>
+  <meta name="description" content="A cool thing made with React + Express">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main">
+    <!-- the hello world app will be in here! -->
+  </div>
+
+
+  <!-- change the song name to your own -->
+  <audio controls loop crossorigin="anonymous" id="audio" src="song1.mp3"></audio>
+
+
+  <!-- levels for all of the audio features -->
+  <label for="rms">rms</label>
+  <input type="range" id="rmsRange" name="rms" min="0.0" max="1.0" step="0.001" />
+  
+  <label for="zcr">zcr</label>
+  <input type="range" id="zcrRange" name="zcr" min="0.0" max="255.0" step="0.001" />
+  
+  <label for="energy">energy</label>
+  <input type="range" id="energyRange" name="energy" min="0.0" max="512.0" step="0.001" />
+  
+  <label for="spectralcentroid">spectralcentroid</label>
+  <input type="range" id="spectralcentroidRange" name="spectralcentroid" min="0.0" max="256.0" step="0.001" />
+  
+  <label for="spectralflatness">spectralflatness</label>
+  <input type="range" id="spectralflatnessRange" name="spectralflatness" min="0.0" max="1.0" step="0.001" />
+  
+  <label for="spectralslope">spectralslope</label>
+  <input type="range" id="spectralslopeRange" name="spectralslope" min="0.0" max="1.0" step="0.001" />
+  
+  <label for="spectralrolloff">spectralrolloff</label>
+  <input type="range" id="spectralrolloffRange" name="spectralrolloff" min="0.0" max="22050.0" step="0.001" />
+  
+  <label for="spectralspread">spectralspread</label>
+  <input type="range" id="spectralspreadRange" name="spectralspread" min="0.0" max="256.0" step="0.001" />
+  
+  <label for="spectralskewness">spectralskewness</label>
+  <input type="range" id="spectralskewnessRange" name="spectralskewness" min="-10.0" max="10.0" step="0.001" />
+  
+  <label for="spectralkurtosis">spectralkurtosis</label>
+  <input type="range" id="spectralkurtosisRange" name="spectralkurtosis" min="0.0" max="1.0" step="0.001" />
+  
+
+  <div id="drawing"></div>
+  <div id="drawing2"></div>
+  <div id="drawing3"></div>
+
+  <!-- bundle all the scripts! thanks to webpack -->
+  <script type="text/javascript" src="/bundle.js"></script>
+</body>
+
+</html>
