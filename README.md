@@ -10,6 +10,14 @@ A Direction Visualizer built using p5 and jsfeat and kylemcdonald's CV examples.
 
 4. Basic overview of how this works
 
-When you click on the video, a point is made and the coordinates are saved. It is tracked and when it has a precious lockon, the point should turn blue. At every draw, I determine the compass direction that the point has moved based on the difference between current and previous coordinates at each draw. Then, I use a frequency map to keep track of how many times the code thinks a certain direction was made. If it determines that the point is going "west", say 10 times, then it will display "west" on the screen. I use a frequency map because it is easy to use and I also need a way to stablize the output because the code will fluctuate between different compass directions. However, when it is certain that a point is moving in "southwest", it will output "southwest" say 50 times in a row. I keep track of what direction the code has determined and update that to render the text. 
+When you click on the video, a point is made and the coordinates are saved. It is tracked and when it has a precious lockon, the point should turn blue. At every draw, I determine the compass direction that the point has moved based on the difference between current and previous coordinates at each draw. 
+
+One problem I had was that even though the directions were correct, the output (which compass direction) would fluctate and you get some outliers. For example, you would get 50 "southwest" in a row and then 1 "southeast" thrown in there. The display would change fast because I was drawing this at every "draw" function call. I needed a way to "remember" the past outputs and go with the "majority" of the outputs.
+
+I decided to solve this using a frequency map. I have a constant that is the threshold of when a direction has to occur before it is shown on the screen. I increment on the frequency map when a direction occurs, and if it hits a threshold, I show it on the screen and then reset my map. 
+
+But I still needed a way to stop the text from showing at every "draw" function. The text would only show up for a second and then be erased because in between the frequency map being updated - for example, if my threshold was 10, and I got 50 "northeast" in a row, then it would show for that 1 second after 10 of thoses, then need to wait until the next 10 got filled. Which would make my text blink on and off instead of staying on screen. 
+
+I went with something simple: a variable "oldDirection". I just update this variable to whatever my last code determined to be the direction. This worked well because it would also reset along with the code - for example, if no movement is detected then the compass direction would be an empty string. (which would then erase the text). If 100 of "north" occured and my threshold was 10, it would consistently show that "north" text. 
 
 I have put constants to determine the threshold that the code has to output a compass direction before it shows it on the screen, on top of app.js
