@@ -21,3 +21,6 @@ But I still needed a way to stop the text from showing at every "draw" function.
 I went with something simple: a variable "oldDirection". I just update this variable to whatever my last code determined to be the direction. This worked well because it would also reset along with the code - for example, if no movement is detected then the compass direction would be an empty string. (which would then erase the text). If 100 of "north" occured and my threshold was 10, it would consistently show that "north" text. 
 
 I have put constants to determine the threshold that the code has to output a compass direction before it shows it on the screen, on top of app.js
+
+
+One drawback of using the frequency map to determine the majority is that there could be a situation where if I go in a circle, and for every single direction I reach the threshold-1 occurences, then by some chance "southeast" hits the threshold - even if the other directions are just below the cutoff, it would still show "southeast". This implementation only works well for "straight" lines that are consistent - and not for circular motions or curves. 
