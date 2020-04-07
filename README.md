@@ -3,7 +3,7 @@ A Direction Visualizer built using p5 and jsfeat and kylemcdonald's CV examples.
 
 1. All of the code is located at /src/index.html and /src/app.js. A majority of the code is located under the function, "drawFunction". 
 
-2. Run "npm install" and then "npm start"
+2. Run "npm install" and then "npm start". Navigate to localhost:3000
 
 3. Click on a certain point and move it around. The direction of which it moves will be shown on the top left. 
 
