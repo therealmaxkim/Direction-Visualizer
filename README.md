@@ -1,7 +1,7 @@
 A Direction Visualizer built using p5 and jsfeat and kylemcdonald's CV examples. Created by Max Kim
 
 
-1. All of the code is located at /src/index.html and /src/app.js. A majority of the code is located under the function, "drawFunction". 
+1. All of the code is located at /src/index.html and /src/app.js. A majority of the code is located under the function, "drawCompass". 
 
 2. Run "npm install" and then "npm start". Navigate to localhost:3000
 
